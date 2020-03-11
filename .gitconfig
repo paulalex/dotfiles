@@ -1,0 +1,10 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+    name = Paul Ockleford
+    email = paul@kuruma.co.uk
+[alias]
+    hist = log --all --graph --decorate --oneline
+    co = checkout
+    no = show --name-only
+    st = status

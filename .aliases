@@ -1,0 +1,47 @@
+# Bash aliases
+
+# Navigation
+alias ..="cd .."
+
+alias ...="cd ../.."
+
+alias ....="cd ../../.."
+
+alias ~="cd ~"
+
+alias bk="cd -"
+
+# Listing
+alias ll="ls -al"
+
+alias lll="ls -latrhF"
+
+alias ln="ln -v"
+
+# Directory management
+alias mkdir="mkdir -p"
+
+# List all files in directory ordered by size descending
+Alias files="du -hs * | sort -rh"
+
+# Pretty print the path
+alias path='echo $PATH | tr -s ":" "\n"'
+
+alias ssh-k8s-non-prod="ssh-add -D && ssh-add ~/.ssh/id_rsa ~/.ssh/texas-live-lk8s-nonprod-key.pem && ssh -A paoc@bastion.k8s-nonprod.texasplatform.uk"
+
+alias kube_dev="leks_config 'nhsd-texasdev-kube-config-lk8s' 'dev-leks-cluster_kubeconfig'"
+
+# Development aliases
+
+alias devhome="cd /Users/paoc/Documents/git_repos && ll"
+
+
+# Kubernetes aliases
+
+alias get_helm="~/.helm/get_helm.sh"
+
+alias k="kubectl"
+
+alias kgp="kubectl get pods"
+
+alias kgn="kubectl get nodes"

@@ -1,0 +1,5 @@
+leks_config() {
+   aws s3 cp s3://$1/$2 ~/.kube/$2
+   export KUBECONFIG=~/.kube/$2
+   kns
+}
