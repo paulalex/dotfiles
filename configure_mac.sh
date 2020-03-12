@@ -52,3 +52,6 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 # Save screenshots to the downloads.
 defaults write com.apple.screencapture location "$HOME/Downloads/"
 
+# Turn dark mode on
+osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
+
