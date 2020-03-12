@@ -1,23 +1,53 @@
-Dotfiles - My personal set of dotfiles
+Dotfiles
 =================
 
-This is a repository of useful linux shell commands presented as dot (.) files, you can load this into
-your developer environment to provide a set of useful functions and commonly used shell commands
+This is a repository of my useful linux shell commands presented as dot (.) files, you can load this into
+your developer environment to provide a set of functions and commonly used shell commands
 wrapped as aliases.
 
 Simply follow the instructions below and the set of files and aliases will be loaded into your
 environment ready to use.
 
+Installation
+------
 
-* Step 1: 
+__Warning:__ Installing the dotfiles will potentially overwrite files in your home directory, however
+all dotfiles are backed up first into the directory `~/.dotfiles`
 
-`mkdir $home/dotfiles`
+Create a directory of your choosing, it doesnt matter where on the file system you like to keep your
+repositories, for example:
 
-* Step 2: 
+`mkdir $home/dotfiles && cd $home/dotfiles`
 
-`git clone --bare https://github.com/paulalex/dotfiles.git $HOME/dotfiles/.dotfiles`
+Clone the repository using git:
 
-* Step 3 - Run following shell-script:
+`git clone https://github.com/paulalex/dotfiles.git $HOME/dotfiles/.dotfiles`
+
+To install run:
+
+`source bootstrap.sh`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ```
 #!/bin/bash
@@ -40,19 +70,19 @@ fi;
 dot_files config status.showUntrackedFiles no
 
 # Load the dotfiles
-for DOTFILE in $(find $HOME/dotfiles)
+for DOTFILE in $(find $HOME/dotfiles -maxdepth 1)
 do
-  [ -f “$DOTFILE” ] && source “$DOTFILE”
+  [[ -f "${DOTFILE}" && "${DOTFILE}" == \.* ]] && echo "${DOTFILE}"
 done
 ```
 
 You can then add, commit, list etc and treat `dotfiles` as a standard git repository
 
 ```
-config status
-config add .vimrc
-config commit -m "Add vimrc"
-config add .bashrc
-config commit -m "Add bashrc"
-config push
+dot_file status
+dot_file add .vimrc
+dot_file commit -m "Add vimrc"
+dot_file add .bashrc
+dot_file commit -m "Add bashrc"
+dot_file push
 ```
