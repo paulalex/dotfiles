@@ -8,7 +8,7 @@ wrapped as aliases.
 Simply follow the instructions below and the set of files and aliases will be loaded into your
 environment ready to use.
 
-Installation
+Installation Instructions
 ------
 
 __Warning:__ Installing the dotfiles will potentially overwrite files in your home directory, however
@@ -25,4 +25,12 @@ Clone the repository using git:
 
 To install run:
 
-`source bootstrap.sh`
+`source dotfiles.sh`
+
+To update run:
+
+`source dotfiles.sh`
+
+To configure a new mac:
+
+`source brew.sh && source configure_mac.sh`

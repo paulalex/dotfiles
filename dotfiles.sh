@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
 
-git pull origin master;
+git pull origin master
 
-function boot_strap() {
-  # Back-up dotfiles in home dir
+function back_up_dot_files() {
   cd ~
   mkdir -p ~/.dotfile-backup
   ls -al ~ | grep -E "\s+\." | awk {'print $9'} | xargs -I {} cp {} ~/.dotfile-backup/{}
   cd -
+}
 
+function boot_strap() {
+  # Back-up dotfiles in home dir
+  back_up_dot_files
+
+  # Sync files to home directory
 	rsync --exclude ".git/" \
 	  --exclude ".gitignore" \
 		--exclude ".DS_Store" \
@@ -17,8 +22,9 @@ function boot_strap() {
 		-exclude "brew.sh" \
 		--exclude "README.md" \
 		--exclude "LICENSE-MIT.txt" \
-		-avh --no-perms . ~;
-	source ~/.bash_profile;
+		-avh --no-perms . ~
+
+	source ~/.bash_profile
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
@@ -31,4 +37,5 @@ else
 	fi
 fi
 
+unset -f back_up_dot_files
 unset -f boot_strap

@@ -1,5 +1,7 @@
+# Configure command prompt
 export PS1="\W\[\033[37m\]\$(parse_git_branch)\[\033[00m\] $ "
 
+# Export workon_home for virtualenvwrapper
 export WORKON_HOME=~/.virtualenvs
 
 # Set CLICOLOR if you want Ansi Colors in iTerm2

@@ -8,3 +8,4 @@
     co = checkout
     no = show --name-only
     st = status
+    gi = init
