@@ -46,3 +46,9 @@ cp -r config/Shortcuts.json ~/Library/Application\ Support/Spectacle/Shortcuts.j
 # Install iterm theme
 open "config/Cobalt2.itermcolors"
 
+# Check for software updates daily, not just once per week
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+# Save screenshots to the downloads.
+defaults write com.apple.screencapture location "$HOME/Downloads/"
+
