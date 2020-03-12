@@ -44,5 +44,7 @@ brew install Openssl
 
 brew install wget
 
+brew install kns
+
 # Remove outdated versions from the cellar.
 brew cleanup
