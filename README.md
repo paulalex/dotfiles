@@ -36,6 +36,7 @@ To configure a new mac:
 `source brew.sh && source configure_mac.sh`
 
 Acknowledgements
+----------------
 
 After looking at several dotfile repos for inspiration I found @mathiasbynens to be the best
 suitable match for me although it contains far too much configuration for my personal preference.
