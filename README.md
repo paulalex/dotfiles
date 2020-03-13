@@ -21,7 +21,7 @@ repositories, for example:
 
 Clone the repository using git:
 
-`git clone https://github.com/paulalex/dotfiles.git $HOME/dotfiles/.dotfiles`
+`git clone https://github.com/paulalex/dotfiles.git`
 
 To install run:
 
@@ -33,7 +33,7 @@ To update run:
 
 To configure a new mac:
 
-`source brew.sh && source configure_mac.sh`
+`source configure_mac.sh`
 
 Acknowledgements
 ----------------
