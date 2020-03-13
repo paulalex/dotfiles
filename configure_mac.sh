@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+# Update the sudoers file so admin user doesnt have to enter their password
+sudo gsed -i 's|^%admin          ALL = (ALL) ALL|%admin          ALL = (ALL) NOPASSWD: ALL|' /etc/sudoers
+
 # create repos folder
 mkdir ~/git_repos
-
 
 # Install tools using homebrew
 source brew.sh
@@ -49,9 +51,8 @@ open "config/Cobalt2.itermcolors"
 # Check for software updates daily, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
-# Save screenshots to the downloads.
+# Save screenshots to downloads folder
 defaults write com.apple.screencapture location "$HOME/Downloads/"
 
 # Turn dark mode on
 osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
-

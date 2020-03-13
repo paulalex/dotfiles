@@ -8,6 +8,16 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade
 
+# Install a modern version of Bash.
+brew install bash
+brew install bash-completion2
+brew install docker-completion
+brew install docker-compose-completion
+brew install pip-completion
+brew install maven-completion
+brew install django-completion
+brew install brew-cask-completion
+
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 
@@ -34,6 +44,8 @@ brew install tfenv
 
 brew install tree
 
+brew install rename
+
 brew install jq
 
 brew install git
@@ -45,6 +57,8 @@ brew install Openssl
 brew install wget
 
 brew install kns
+
+brew install tcptrace
 
 # Remove outdated versions from the cellar.
 brew cleanup
